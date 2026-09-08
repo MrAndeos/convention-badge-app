@@ -18,6 +18,8 @@ jobs:
 
       - uses: android-actions/setup-android@v3
 
+      - run: chmod +x ./gradlew
+
       - run: ./gradlew assembleDebug
 
       - uses: softprops/action-gh-release@v2
