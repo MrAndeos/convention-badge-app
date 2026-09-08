@@ -1,0 +1,34 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.andeos.badge'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.andeos.badge"
+        // minSdk 21: startLockTask (screen pinning) was introduced in API 21.
+        // WRITE_SETTINGS became runtime-gated in API 23 (Marshmallow), so the
+        // permission prompt is version-checked in BadgeActivity.kt.
+        minSdk 21
+        targetSdk 25
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
